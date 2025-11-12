@@ -1,4 +1,4 @@
-import 'package:brew_crew/models/user.dart';
+import 'package:myfirebase/models/user.dart';
 import 'package:myfirebase/screens/authenticate/authenticate.dart';
 import 'package:myfirebase/screens/home/home.dart';
 import 'package:flutter/material.dart';
@@ -12,7 +12,11 @@ class Wrapper extends StatelessWidget {
     print(user);
     
     // return either the Home or Authenticate widget
-    return Authenticate();
+    if (user == null){
+      return Authenticate();
+    } else {
+      return Home();
+    }
     
   }
 }
